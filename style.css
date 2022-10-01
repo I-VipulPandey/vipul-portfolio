@@ -126,6 +126,8 @@ body {
     font-size: 5vw;
     color: #FFA500;
     text-transform: uppercase;
+    display: inline-block;
+    margin-right: 1vw;
 }
 
 .content h2 .type {
@@ -231,7 +233,7 @@ body {
     height: 30vh;
     right: -37vw;
     top: -25vh;
-    
+
 }
 
 #page2 .img #boy {
@@ -284,7 +286,7 @@ body {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
 }
 
-.skills-sec img:hover{
+.skills-sec img:hover {
     transform: scale(1.2);
 }
 
@@ -294,6 +296,10 @@ body {
     width: 100vw;
     min-height: 100vh;
 
+}
+
+#page4 h1 {
+    opacity: 0;
 }
 
 #page4 h2 {
@@ -488,8 +494,7 @@ body {
 
 }
 
-
-.txt-container #lower a span:hover{
+.txt-container #lower a span:hover {
     color: #15171b;
 }
 
@@ -501,11 +506,11 @@ body {
     padding: 1vh 2vh;
     align-items: center;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
-    
+
 
 }
 
-.txt-container #lower button:hover{
+.txt-container #lower button:hover {
     background-color: #FFA500;
     color: #111;
 
@@ -533,23 +538,23 @@ body {
 
 }
 
-footer{
+footer {
     position: relative;
     height: 80vh;
     width: 100vw;
 }
 
-.contact-form{
+.contact-form {
     margin-top: 20vh;
     display: flex;
     align-items: center;
     gap: 20vw;
     padding: 5vh 10vw;
     color: #DFF8EB;
-    
+
 }
 
-.contact-form .contact-part1{
+.contact-form .contact-part1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -557,7 +562,7 @@ footer{
     gap: 6vh;
 }
 
-.contact-form .contact-part1 h2{
+.contact-form .contact-part1 h2 {
     font-family: "cyrene";
     font-size: 5vw;
     text-transform: uppercase;
@@ -565,8 +570,12 @@ footer{
     letter-spacing: 2px;
 }
 
+.contact-form .contact-part1 p{
+    font-size: 1.5vw;
+}
 
-#phone{
+
+#phone {
     margin-top: 5vh;
 }
 
@@ -580,7 +589,7 @@ footer{
 }
 
 
-.contact-form .contact-part1 form input{
+.contact-form .contact-part1 form input {
     background-color: transparent;
     border: none;
     color: #DFF8EB;
@@ -591,7 +600,7 @@ footer{
     text-transform: uppercase;
 }
 
-.contact-form .contact-part1 form button{
+.contact-form .contact-part1 form button {
     background-color: transparent;
     height: 6vh;
     width: 12vw;
@@ -601,12 +610,12 @@ footer{
     font-weight: 100;
 }
 
-.contact-form .contact-part1 form button:hover{
+.contact-form .contact-part1 form button:hover {
     background-color: #FFA500;
     color: #111;
 }
 
-.contact-form .contact-part2 #info{
+.contact-form .contact-part2 #info {
     height: 50vh;
     width: 35vw;
     background-color: #15171b;
@@ -619,19 +628,19 @@ footer{
 }
 
 
-#info h2 span{
+#info h2 span {
     font-size: 2vw;
     margin-right: 2vw;
 }
 
-#info h1{
+#info h1 {
     font-size: 2vw;
     color: #FFA500;
     font-family: "cyrene";
-letter-spacing: 2px;
+    letter-spacing: 2px;
 }
 
-#info h2{
+#info h2 {
     display: flex;
     align-items: center;
     font-weight: 100;
@@ -639,10 +648,214 @@ letter-spacing: 2px;
 }
 
 
-#info h2 a{
+#info h2 a {
     text-decoration: none;
     font-weight: 100;
     font-size: 1.5vw;
     color: #DFF8EB;
 }
 
+@media only screen and (max-width:500px) {
+
+
+    .nav .logo a {
+        font-size: 6vw;
+    }
+
+    .nav .links a {
+        font-size: 3vw;
+    }
+
+    .content {
+        left: 8vh;
+        top: 50vw;
+    }
+
+    .content h3 {
+        font-size: 9vw;
+    }
+
+    .content h2 {
+        font-size: 12vw;
+        margin-top: 1vh;
+    }
+
+    .content h2 {
+        font-size: 10vw;
+        display: block;
+    }
+
+    .content h2 .type {
+        font-size: 12vw;
+    }
+
+    .socials {
+        position: absolute;
+        top: 80vh;
+        left: 10vw;
+        width: 50vw;
+    }
+
+    .socials a {
+        font-size: 5vw;
+        margin-right: 4vw;
+    }
+
+    #page2 {
+        flex-direction: column-reverse;
+        height: 112vh;
+    }
+
+    #page2 .img{
+        left: 3vh;
+
+    }
+    #page2 .img #blob {
+        right: initial;
+        top: initial;
+        width: 150vw;
+    }
+
+    #page2 .img #boy {
+        right: initial;
+        top: initial;
+        height: 35vh;
+    }
+
+    .about {
+        left: 9vw;
+        display: initial;
+        margin-top: initial;
+        width: 90vw;
+    }
+
+    .about h2 {
+        font-size: 12vw;
+        margin-bottom: 5vh;
+        position: relative;
+        left: 17vw;
+    }
+
+    .about p {
+        font-size: 4.3vw;
+        width: 75vw;
+        line-height: 3.5vh;
+    }
+
+    .about button {
+        height: 6vh;
+        width: 40vw;
+        font-size: 5.5vw;
+        margin-top: 5vh;
+    }
+
+    .skills h2 {
+        font-size: 12vw;
+    }
+
+    .skills-sec {
+        grid-template-columns: none;
+    }
+
+    #page4 {
+        min-height: 60vh;
+    }
+
+    #page4 h2 {
+        font-size: 12vw;
+        left: 25vw;
+    }
+
+    .section {
+        height: 30vh;
+        width: 50vw;
+        margin-top: 10vh;
+
+    }
+
+    #page4 .img-txt-container {
+        top: -40%;
+        /* left: -50%; */
+    }
+
+    .img-txt-container .img-box {
+        height: 20vh;
+        width: 80vw;
+    }
+
+    .img-txt-container {
+        right: -15%;
+
+    }
+
+    .txt-container #upper {
+        font-size: 5.5vw;
+    }
+
+    .txt-container #lower {
+        padding-left: initial;
+        width: 103%;
+    }
+
+    .txt-container #lower button span {
+        font-size: 2.5vw;
+    }
+
+    footer{
+        height: 110vh;
+    }
+
+    .contact-form {
+        flex-direction: column;
+        margin-top: 5vh;
+    }
+
+    .contact-form .contact-part1{
+        gap: 4vh;
+    }
+
+    .contact-form .contact-part1 h2 {
+        font-size: 12vw;
+    }
+
+    .contact-form .contact-part1 p {
+        font-size: 5vw;
+    }
+
+    .contact-form .contact-part1 form input{
+        width: 65vw;
+        font-size: 3vw;
+    }
+
+    .contact-form .contact-part1 form button{
+        height: 5vh;
+        width: 35vw;
+        font-size: 4vw;
+    }
+
+
+    .contact-form .contact-part2 #info {
+        height: 40vh;
+        width: 80vw;
+    }
+
+    #info h1 {
+        font-size: 9vw;
+    }
+
+    #info h2 {
+        font-size: 4.5vw;
+    }
+
+    #info h2 a {
+        font-size: 4.5vw;
+    }
+
+
+
+
+
+
+
+
+}
