@@ -58,7 +58,7 @@ function ProjectsAnimation() {
     scrollTrigger: {
       trigger: '.section',
       scroller: "#main",
-      start: "top 24%",
+      start: "top 25%",
       toggleActions: "play pause pause reverse",
       //  markers: true,
 
@@ -68,12 +68,26 @@ function ProjectsAnimation() {
     borderTopRightRadius: '0',
     borderTopLeftRadius: '0',
     width: '100vw',
-    height: '165vh',
+    height: '100vh',
     ease: ' Power2.easeOut',
     backgroundImage: "none",
     backgroundColor: "initial",
     boxShadow: 'none',
 
+  })
+
+  gsap.to('#img-box1', {
+
+    scrollTrigger: {
+      trigger: '#img-box1',
+      scroller: "#main",
+      start: "top 24%",
+      toggleActions: "play pause pause reverse",
+
+      //  markers: true,
+
+    },
+    opacity: '1',
   })
 
 
@@ -184,15 +198,27 @@ function ProjectsMobileAnimation() {
     borderTopRightRadius: '0',
     borderTopLeftRadius: '0',
     width: '100vw',
-    height: '165vh',
+    height: '50vh',
     ease: ' Power2.easeOut',
     backgroundImage: "none",
     backgroundColor: "initial",
     boxShadow: 'none',
-    left: '30%',
 
   })
 
+  gsap.to('#img-box1', {
+
+    scrollTrigger: {
+      trigger: '#img-box1',
+      scroller: "#main",
+      start: "top 65%",
+      toggleActions: "play pause pause reverse",
+
+      //  markers: true,
+
+    },
+    opacity: '1',
+  })
 
   gsap.to('.section h1', {
 
@@ -220,7 +246,7 @@ function TextMobileAnimation() {
 
       scrollTrigger: {
         trigger: AnimateIt[i],
-        scroller: "body",
+        scroller: "#main",
         start: "top 70%",
         end: "top 50%",
         scrub: .3,
