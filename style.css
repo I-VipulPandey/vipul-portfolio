@@ -30,6 +30,7 @@ body {
     width: 100%;
     font-family: "gilroy";
     overflow-x: hidden;
+    background-color: #15171b;
 }
 
 
@@ -571,7 +572,7 @@ footer {
     letter-spacing: 2px;
 }
 
-.contact-form .contact-part1 p{
+.contact-form .contact-part1 p {
     font-size: 1.5vw;
 }
 
@@ -707,10 +708,12 @@ footer {
         height: 112vh;
     }
 
-    #page2 .img{
+
+    #page2 .img {
         left: 3vh;
 
     }
+
     #page2 .img #blob {
         right: initial;
         top: initial;
@@ -724,7 +727,7 @@ footer {
     }
 
     .about {
-        left: 9vw;
+        left: 3vw;
         display: initial;
         margin-top: initial;
         width: 90vw;
@@ -741,6 +744,7 @@ footer {
         font-size: 4.3vw;
         width: 75vw;
         line-height: 3.5vh;
+        display: contents;
     }
 
     .about button {
@@ -767,14 +771,21 @@ footer {
     }
 
     .section {
-        height: 50vh;
-        width: 50vw;
+        height: 55vh;
+        width: 100vw;
         margin-top: 10vh;
-
+        background-image: none;
+        box-shadow: none;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
     }
 
-       .img-txt-container .img-box {
-        height: 20vh;
+    #img-box1{
+        opacity: 1;
+    }
+
+    .img-txt-container .img-box {
+        height: 23vh;
         width: 80vw;
     }
 
@@ -796,7 +807,7 @@ footer {
         font-size: 2.5vw;
     }
 
-    footer{
+    footer {
         height: 110vh;
     }
 
@@ -805,7 +816,7 @@ footer {
         margin-top: 5vh;
     }
 
-    .contact-form .contact-part1{
+    .contact-form .contact-part1 {
         gap: 4vh;
     }
 
@@ -817,12 +828,12 @@ footer {
         font-size: 5vw;
     }
 
-    .contact-form .contact-part1 form input{
+    .contact-form .contact-part1 form input {
         width: 65vw;
         font-size: 3vw;
     }
 
-    .contact-form .contact-part1 form button{
+    .contact-form .contact-part1 form button {
         height: 5vh;
         width: 35vw;
         font-size: 4vw;
@@ -846,7 +857,7 @@ footer {
         font-size: 4.5vw;
     }
 
-    #info h2 span{
+    #info h2 span {
         font-size: 4vw;
     }
 

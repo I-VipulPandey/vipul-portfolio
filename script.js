@@ -198,7 +198,7 @@ function ProjectsMobileAnimation() {
     borderTopRightRadius: '0',
     borderTopLeftRadius: '0',
     width: '100vw',
-    height: '50vh',
+    height: '52vh',
     ease: ' Power2.easeOut',
     backgroundImage: "none",
     backgroundColor: "initial",
@@ -264,8 +264,8 @@ function TextMobileAnimation() {
 
 
 if (window.innerWidth <= 500) {
-CursonAnimation();
-  ProjectsMobileAnimation();
+  CursonAnimation();
+  // ProjectsMobileAnimation();
   PageColorChange();
   TextMobileAnimation();
 }
@@ -277,6 +277,6 @@ else {
   PageColorChange();
   TextAnimation();
 
-  }
-  
-  
+}
+
+
