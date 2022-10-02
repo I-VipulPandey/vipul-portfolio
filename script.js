@@ -173,7 +173,7 @@ function ProjectsMobileAnimation() {
 
     scrollTrigger: {
       trigger: '.section',
-      scroller: "body",
+      scroller: "#main",
       start: "top 65%",
       toggleActions: "play pause pause reverse",
       //  markers: true,
@@ -198,7 +198,7 @@ function ProjectsMobileAnimation() {
 
     scrollTrigger: {
       trigger: '.section h1',
-      scroller: "body",
+      scroller: "#main",
       start: "top 75%",
       toggleActions: "play pause pause reverse",
       //  markers: true,

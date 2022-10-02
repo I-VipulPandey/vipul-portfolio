@@ -663,7 +663,7 @@ footer {
     }
 
     .nav .links a {
-        font-size: 3vw;
+        font-size: 3.5vw;
     }
 
     .content {
@@ -851,6 +851,9 @@ footer {
         font-size: 4.5vw;
     }
 
+    #info h2 span{
+        font-size: 4vw;
+    }
 
 
 
