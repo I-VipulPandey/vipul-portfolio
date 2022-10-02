@@ -263,21 +263,20 @@ function TextMobileAnimation() {
 }
 
 
-if (window.innerWidth <= 500) {
+// if (window.innerWidth <= 500) {
+//   show();
+
+//   ProjectsMobileAnimation();
+//   PageColorChange();
+//   TextMobileAnimation();
+// }
+
+// else {
   show();
-
-  ProjectsMobileAnimation();
-  PageColorChange();
-  TextMobileAnimation();
-}
-
-else {
-  show();
-
   CursonAnimation();
   ProjectsAnimation();
   PageColorChange();
   TextAnimation();
-}
+// }
 
 
