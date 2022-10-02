@@ -773,7 +773,7 @@ footer {
     .section {
         height: 55vh;
         width: 100vw;
-        margin-top: 10vh;
+        margin-top: 0vh;
         background-image: none;
         box-shadow: none;
         border-top-right-radius: 0;
