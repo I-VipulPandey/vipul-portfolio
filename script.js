@@ -198,7 +198,7 @@ function ProjectsMobileAnimation() {
     borderTopRightRadius: '0',
     borderTopLeftRadius: '0',
     width: '100vw',
-    height: '52vh',
+    height: '60vh',
     ease: ' Power2.easeOut',
     backgroundImage: "none",
     backgroundColor: "initial",
@@ -211,7 +211,7 @@ function ProjectsMobileAnimation() {
     scrollTrigger: {
       trigger: '#img-box1',
       scroller: "body",
-      start: "top 65%",
+      start: "top 70%",
       toggleActions: "play pause pause reverse",
 
       //  markers: true,
@@ -265,7 +265,7 @@ function TextMobileAnimation() {
 
 if (window.innerWidth <= 500) {
   CursonAnimation();
-  // ProjectsMobileAnimation();
+  ProjectsMobileAnimation();
   PageColorChange();
   // TextMobileAnimation();
 }
