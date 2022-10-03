@@ -264,7 +264,7 @@ function TextMobileAnimation() {
 
 
 if (window.innerWidth <= 500) {
-  show();
+  // show();
   CursonAnimation();
   ProjectsMobileAnimation();
   PageColorChange();
