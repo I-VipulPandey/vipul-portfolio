@@ -744,7 +744,7 @@ footer {
         font-size: 4.3vw;
         width: 75vw;
         line-height: 3.5vh;
-        display: contents;
+        /* display: contents; */
     }
 
     .about button {

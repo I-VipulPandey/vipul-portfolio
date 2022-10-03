@@ -210,7 +210,7 @@ function ProjectsMobileAnimation() {
 
     scrollTrigger: {
       trigger: '#img-box1',
-      scroller: "body",
+      scroller: "#main",
       start: "top 70%",
       toggleActions: "play pause pause reverse",
 
@@ -224,7 +224,7 @@ function ProjectsMobileAnimation() {
 
     scrollTrigger: {
       trigger: '.section h1',
-      scroller: "body",
+      scroller: "#main",
       start: "top 75%",
       toggleActions: "play pause pause reverse",
       //  markers: true,
@@ -264,7 +264,7 @@ function TextMobileAnimation() {
 
 
 if (window.innerWidth <= 500) {
-  show();
+  
   CursonAnimation();
   ProjectsMobileAnimation();
   PageColorChange();
