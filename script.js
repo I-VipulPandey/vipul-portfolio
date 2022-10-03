@@ -267,7 +267,7 @@ if (window.innerWidth <= 500) {
   CursonAnimation();
   // ProjectsMobileAnimation();
   PageColorChange();
-  TextMobileAnimation();
+  // TextMobileAnimation();
 }
 
 else {
