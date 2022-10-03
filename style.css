@@ -65,10 +65,8 @@ body {
 
 #main {
     min-height: 100vh;
-    width: 100vw;
     background-color: #15171b;
     position: relative;
-
 }
 
 .nav {
@@ -781,7 +779,7 @@ footer {
         transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
     }
 
-    #img-box1{
+    #img-box1 {
         opacity: 0;
     }
 
