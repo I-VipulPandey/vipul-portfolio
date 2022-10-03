@@ -785,8 +785,10 @@ footer {
     }
 
     .img-txt-container .img-box {
-        height: 20vh;
+        height: 22vh;
         width: 80vw;
+        background-position: center;
+        background-size: cover;
     }
 
     .img-txt-container {
