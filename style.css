@@ -64,9 +64,9 @@ body {
 
 
 #main {
-    min-height: 100vh;
     background-color: #15171b;
-    position: relative;
+    position: absolute;
+
 }
 
 .nav {
@@ -657,12 +657,12 @@ footer {
 
 @media only screen and (max-width:500px) {
 
+
     #main{
-        position: absolute;
+    overflow-x: hidden;
+
     }
-
-
-    .nav .logo a {
+       .nav .logo a {
         font-size: 6vw;
     }
 
@@ -739,7 +739,7 @@ footer {
         font-size: 12vw;
         margin-bottom: 5vh;
         position: relative;
-        left: 17vw;
+        left: 22vw;
     }
 
     .about p {
