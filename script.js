@@ -187,7 +187,7 @@ function ProjectsMobileAnimation() {
 
     scrollTrigger: {
       trigger: '.section',
-      scroller: "#main",
+      scroller: "body",
       start: "top 65%",
       toggleActions: "play pause pause reverse",
       //  markers: true,
@@ -210,7 +210,7 @@ function ProjectsMobileAnimation() {
 
     scrollTrigger: {
       trigger: '#img-box1',
-      scroller: "#main",
+      scroller: "body",
       start: "top 70%",
       toggleActions: "play pause pause reverse",
 
@@ -224,7 +224,7 @@ function ProjectsMobileAnimation() {
 
     scrollTrigger: {
       trigger: '.section h1',
-      scroller: "#main",
+      scroller: "body",
       start: "top 75%",
       toggleActions: "play pause pause reverse",
       //  markers: true,
@@ -246,7 +246,7 @@ function TextMobileAnimation() {
 
       scrollTrigger: {
         trigger: AnimateIt[i],
-        scroller: "#main",
+        scroller: "body",
         start: "top 70%",
         end: "top 50%",
         scrub: .3,
@@ -264,7 +264,7 @@ function TextMobileAnimation() {
 
 
 if (window.innerWidth <= 500) {
-  // show();
+  show();
   CursonAnimation();
   ProjectsMobileAnimation();
   PageColorChange();
