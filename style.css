@@ -775,11 +775,6 @@ footer {
     .section {
         height: 55vh;
         width: 60vw;
-        /* margin-top: 0vh; */
-        /* background-image: none; */
-        /* box-shadow: none; */
-        /* border-top-right-radius: 0; */
-        /* border-top-left-radius: 0; */
         transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
     }
 
