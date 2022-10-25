@@ -13,6 +13,12 @@
     src: url("assets/Mazius-Extraitalic.121a71a7.otf");
 }
 
+@font-face {
+    font-family: daa;
+    src: url("assets/daa8d155f1a0ec65b0c26330724383d4.ttf");
+}
+
+
 
 * {
     margin: 0;
@@ -31,6 +37,7 @@ body {
     font-family: "gilroy";
     overflow-x: hidden;
     background-color: #15171b;
+    cursor: url('assets/cursor-default.png'), auto;
 }
 
 
@@ -42,6 +49,7 @@ body {
     animation: come 1s linear forwards;
     position: absolute;
     pointer-events: none;
+    z-index: 99999;
 }
 
 @keyframes come {
@@ -59,8 +67,6 @@ body {
         opacity: 0;
     }
 }
-
-
 
 
 #main {
@@ -88,23 +94,7 @@ body {
 
 }
 
-.nav .links a {
 
-    text-decoration: none;
-    font-size: 1.5vw;
-    color: #DFF8EB;
-    margin-left: 3vw;
-    font-weight: 200;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
-
-
-}
-
-.nav .links a:hover {
-    padding-bottom: .5vh;
-    color: #FFA500;
-    border-bottom: 1px solid #FFA500;
-}
 
 #page1 {
     position: relative;
@@ -112,10 +102,26 @@ body {
     height: 90vh;
 }
 
+.hero-img {
+    position: absolute;
+    right: 1%;
+    top: 10%;
+    z-index: 5;
+}
+
+.hero-img img {
+    height: 45vw;
+    width: 45vw;
+    mix-blend-mode: difference;
+}
+
 .content {
     position: relative;
     left: 20vh;
     top: 15vw;
+    z-index: 9;
+    mix-blend-mode: difference;
+
 
 }
 
@@ -124,6 +130,7 @@ body {
     font-size: 3vw;
     font-family: "cyrene";
     letter-spacing: 3px;
+
 }
 
 .content h2 {
@@ -132,6 +139,7 @@ body {
     text-transform: uppercase;
     display: inline-block;
     margin-right: 1vw;
+
 }
 
 .content h2 .type {
@@ -298,16 +306,12 @@ body {
 
     position: relative;
     width: 100vw;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    height: 750vh;
 }
 
-#page4 h1 {
-    opacity: 0;
-}
 
 #page4 h2 {
     position: relative;
@@ -319,41 +323,48 @@ body {
 
 }
 
+#page4 p {
+    color: #DFF8EB;
+    margin-top: 10vh;
+    line-height: 3.5vh;
+    text-align: center;
+    font-size: .9vw;
+    font-family: "daa";
+}
+
 .section {
-    position: relative;
-    margin-top: 15vh;
     height: 70vh;
     width: 35vw;
     border-top-right-radius: 45%;
     border-top-left-radius: 45%;
-    overflow: hidden;
-    background-position: center;
-    background-size: cover;
-    background-image: url("assets/undraw_working_from_anywhere_re_9obt.svg");
-    color: #DFF8EB;
     box-shadow:
         0 0 0 10px hsl(0, 0%, 30%),
         0 0 0 15px hsl(0, 0%, 40%),
         0 0 0 20px hsl(0, 0%, 50%),
         0 0 0 30px hsl(0, 0%, 60%),
         0 0 0 35px hsl(0, 0%, 80%);
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    position: relative;
+    margin-top: 15vh;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-image: url("assets/undraw_working_from_anywhere_re_9obt.svg");
+    background-color: #fff;
+    color: #111;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
 
 }
-
-
-
 
 .img-txt-container {
     position: relative;
     width: fit-content;
-    right: -38%;
+    right: -5%;
     cursor: pointer;
 
 }
 
 .img-txt-container:nth-child(even) {
-    right: -5%;
+    right: -35%;
 
 }
 
@@ -368,10 +379,13 @@ body {
     border: 1px solid #111;
 }
 
+#master-1 {
+    opacity: 0;
+    pointer-events: none;
+}
 
 
 #img-box1 {
-    opacity: 0;
     background-image: url("assets/RocketAir.png");
 }
 
@@ -481,11 +495,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 120%;
+    width: 105%;
     padding-left: 2vh;
     margin-bottom: 2vh;
     align-items: center;
-
 
 }
 
@@ -496,7 +509,7 @@ body {
 }
 
 .txt-container #lower a span:hover {
-    color: #15171b;
+    color: #DFF8EB;
 }
 
 .txt-container #lower button {
@@ -513,12 +526,12 @@ body {
 
 .txt-container #lower button:hover {
     background-color: #FFA500;
-    color: #111;
+    color: #DFF8EB;
 
 }
 
 .txt-container #lower button span {
-    color: #DFF8EB;
+    color: #111;
     word-spacing: 2px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -529,14 +542,6 @@ body {
 }
 
 
-.projects {
-    position: relative;
-    min-height: 100vh;
-    width: 100vw;
-    z-index: 99999999;
-    color: #DFF8EB;
-
-}
 
 footer {
     position: relative;
@@ -658,11 +663,12 @@ footer {
 @media only screen and (max-width:500px) {
 
 
-    #main{
-    overflow-x: hidden;
+    #main {
+        overflow-x: hidden;
 
     }
-       .nav .logo a {
+
+    .nav .logo a {
         font-size: 6vw;
     }
 

@@ -30,7 +30,7 @@ function show() {
   ScrollTrigger.refresh();
 
 }
-
+show();
 
 function CursonAnimation() {
 
@@ -53,67 +53,56 @@ function CursonAnimation() {
 
 
 function ProjectsAnimation() {
+
   gsap.to('.section', {
 
     scrollTrigger: {
       trigger: '.section',
       scroller: "#main",
-      start: "top 25%",
+      start: "top 23%",
       toggleActions: "play pause pause reverse",
       //  markers: true,
 
     },
+
     scale: '1',
     top: '0%',
     borderTopRightRadius: '0',
     borderTopLeftRadius: '0',
     width: '100vw',
-    height: '100vh',
+    height: '700vh',
     ease: ' Power2.easeOut',
     backgroundImage: "none",
-    backgroundColor: "initial",
+    backgroundColor: "#fff",
     boxShadow: 'none',
-
   })
 
-  gsap.to('#img-box1', {
+  gsap.to('#master-1', {
 
     scrollTrigger: {
-      trigger: '#img-box1',
+      trigger: '#master-1',
       scroller: "#main",
-      start: "top 24%",
+      start: "top 32.5%",
       toggleActions: "play pause pause reverse",
 
       //  markers: true,
 
     },
+
     opacity: '1',
+    pointerEvents: "all",
   })
-
-
-  gsap.to('.section h1', {
-
-    scrollTrigger: {
-      trigger: '.section h1',
-      scroller: "#main",
-      start: "top 75%",
-      toggleActions: "play pause pause reverse",
-      //  markers: true,
-
-    },
-    display: 'initial',
-
-  })
-
 
 }
 
 
 function PageColorChange() {
 
-  var container = document.querySelectorAll(".img-box");
-  var main = document.querySelector("#main");
-  var circleTxt = document.querySelectorAll(".round-txt");
+  let container = document.querySelectorAll(".img-box");
+  let main = document.querySelector("#main");
+  let section = document.querySelector(".section");
+
+  let circleTxt = document.querySelectorAll(".round-txt");
 
 
   for (let i = 0; i < container.length; i++) {
@@ -121,6 +110,8 @@ function PageColorChange() {
 
       const color = dets.path[0].dataset.color;
       main.style.backgroundColor = color;
+      section.style.backgroundColor = color;
+
 
       circleTxt[i].style.display = 'initial';
 
@@ -129,6 +120,8 @@ function PageColorChange() {
     container[i].addEventListener("mouseleave", function (dets) {
 
       main.style.backgroundColor = "#15171b";
+      section.style.backgroundColor = "#fff";
+
       circleTxt[i].style.display = 'none';
 
 
@@ -158,7 +151,7 @@ function PageColorChange() {
 }
 
 function TextAnimation() {
-  var AnimateIt = document.querySelectorAll(".txts");
+  let AnimateIt = document.querySelectorAll(".txts");
 
   for (let i = 0; i < AnimateIt.length; i++) {
 
@@ -220,25 +213,10 @@ function ProjectsMobileAnimation() {
     opacity: '1',
   })
 
-  gsap.to('.section h1', {
-
-    scrollTrigger: {
-      trigger: '.section h1',
-      scroller: "#main",
-      start: "top 75%",
-      toggleActions: "play pause pause reverse",
-      //  markers: true,
-
-    },
-    display: 'initial',
-
-  })
-
-
 }
 
 function TextMobileAnimation() {
-  var AnimateIt = document.querySelectorAll(".txts");
+  let AnimateIt = document.querySelectorAll(".txts");
 
   for (let i = 0; i < AnimateIt.length; i++) {
 
@@ -262,9 +240,19 @@ function TextMobileAnimation() {
   }
 }
 
+function heroImgAnimation() {
+  let photu = document.querySelector('#photu');
+
+  window.addEventListener('mousemove', function (dets) {
+
+    photu.style.transform = ` translateY(${1 - dets.clientY * 0.09}px) translateX(${1 - dets.clientX * 0.09}px) `
+
+  })
+
+}
+
 
 if (window.innerWidth <= 500) {
-  show();
   CursonAnimation();
   ProjectsMobileAnimation();
   PageColorChange();
@@ -272,11 +260,12 @@ if (window.innerWidth <= 500) {
 }
 
 else {
-  show();
   CursonAnimation();
   ProjectsAnimation();
   PageColorChange();
   TextAnimation();
+  heroImgAnimation();
+
 
 }
 
