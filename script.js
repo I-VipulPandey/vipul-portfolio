@@ -19,10 +19,25 @@ function loco() {
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
-    smooth: true
+    smooth: true,
+    getDirection: true,
+    
   });
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
+
+  locoScroll.on('scroll', function (dets) {
+
+    if (dets.direction === "up") {
+      document.querySelector('.nav').style.top = "0";
+    }
+
+    else {
+      document.querySelector('.nav').style.top = "-100%";
+
+    }
+
+  })
 
   // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy("#main", {
@@ -44,8 +59,8 @@ function loco() {
   // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
   ScrollTrigger.refresh();
 
+
 }
-loco();
 
 function CursonAnimation() {
 
@@ -344,6 +359,7 @@ if (window.innerWidth <= 500) {
 }
 
 else {
+loco();
   heroBackground();
   CursonAnimation();
   ProjectsAnimation();

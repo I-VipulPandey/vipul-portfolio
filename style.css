@@ -72,14 +72,13 @@ body {
 .nav {
 
     width: 100vw;
-    padding: 3vh 5vw;
+    padding: 3.5vh 5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 99999;
     position: absolute;
-
-
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
 }
 
 .nav .logo a {
@@ -765,10 +764,6 @@ body {
     justify-content: center;
 }
 
-.circle img {
-    position: absolute;
-    height: 15vw;
-}
 
 .heads {
     position: absolute;
