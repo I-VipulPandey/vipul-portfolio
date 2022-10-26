@@ -14,17 +14,29 @@
 
 <body>
 
+    <div class="menubar">
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
 
-    <div id="main">
-
-        <div class="nav">
-            <div class="logo">
-                <a href="">Portfolio</a>
-            </div>
-            
+    <div class="nav">
+        <div class="logo">
+            <a href="">Portfolio</a>
+        </div>
+        <div class="menu">
+            <div id="line1"></div>
+            <div id="line2"></div>
         </div>
 
+
+    </div>
+
+    <div id="main">
         <div id="page1">
+
 
             <div class="content">
                 <h3>Hello</h3>
@@ -32,6 +44,7 @@
                 <h2><span class="type"></span> </h2>
 
             </div>
+
             <div class="hero-img">
                 <img id="photu" src="assets/undraw_firmware_re_fgdy.svg" alt="">
             </div>
@@ -45,55 +58,21 @@
 
         </div>
 
-        <div id="page2">
+        <div class="about-para">
 
-            <div class="about">
-
-                <h2>About</h2>
-
-                <p class="txts"> Hi, I'm Vipul Pandey, a dedicated and proactive Frontend developer with a </p>
-                <p class="txts">strong background in developing and designing websites.I'm pursuing my</p>
-                <p class="txts">B.Tech degree in Computer Science from Sagar Institute of Research And
-                    Technology.</p>
-                <p class="txts">My interests are in Front End Development, and I love to create beautiful</p>
-                <p class="txts"> and performant products with delightful user experiences.</p>
-
-                <a class="txts" href="https://www.instagram.com/i_vipul_pandey/"><button>Know More</button></a>
-            </div>
-
-            <div class="img">
-                <img id="boy" src="assets/final-PhotoRoom.png" alt="">
-
-                <div id="blob"">
-                    <img src=" assets/blob.svg" alt="">
-                </div>
-
-            </div>
-
+            <p class="txts">I am Vipul Pandey, a Frontend Developer.
+            <p class="txts">I enjoy solving hard problems and bringing new ideas to the table.</p>
+            <p class="txts">I prioritize falling in love with the problem and iterate until, </p>
+            <p class="txts">I’m happy with the outcome.</p>
         </div>
 
-        <div id="page3">
 
-            <div class="skills">
-                <h2>Skills</h2>
-            </div>
-
-            <div class="skills-sec">
-
-                <img class="txts" src="assets/html-5.png" alt="">
-                <img class="txts" src="assets/css.png" alt="">
-                <img class="txts" src="assets/js.png" alt="">
-
-            </div>
-
-        </div>
-
-        <div id="page4">
+        <div id="work-section">
 
             <h2>Recent Work </h2>
-            <p>A COLLECTION OF WORK, PAST AND PRESENT. SOME BUILT FOR <br>
-                TODAY, FOR TOMORROW AND OTHERS FOR THE FUTURE. FROM <br>
-                EDITORIAL AND WEB, TO PRODUCT AND VISION WORK.</p>
+            <p class="txts">A collection of work, past and present. Some built for </p>
+            <p class="txts"> today, for tomorrow and others for the future. </p>
+            <p class="txts">From editorial and web, to product and vision work.</p>
 
             <div class="section">
 
@@ -318,45 +297,21 @@
         </div>
 
 
-        <footer>
-
-            <div class="contact-form">
-                <div class="contact-part1">
-                    <h2>Let's Talk</h2>
-                    <p>Ask me anything or just say hi...</p>
-                    <form action="">
-
-                        <input type="text" placeholder="Your Name">
-                        <input type="email" placeholder="Your Email">
-                        <input type="text" placeholder="Your Message">
-
-                        <button> Send</button>
-                    </form>
-
-                </div>
-                <div class="contact-part2">
-
-                    <div id="info">
-                        <h1>Contact</h1>
-                        <h2><span><i class="ri-phone-line"></i></span> +91 8770107442</h2>
-                        <h2><span><i class="ri-mail-send-line"></i></span>Vipulpandey7860@gmail.com</h2>
-                        <h2><span><i class="ri-linkedin-fill"></i></span><a
-                                href="https://www.linkedin.com/in/vipul-pandey-828459193/">linkidin/vipul-pandey</a>
-                        </h2>
-                    </div>
-
-
-                </div>
+        <div class="hero-footer">
+            <div class="circle">
+                <img src="assets/circle-dribbble-unscreen.gif" alt="">
             </div>
-
-        </footer>
-
+            <div class="heads">
+                <h2>Let’s solve this puzzle together.</h2>
+                <p>Have a project in mind or want to talk? Say hey at <a class="email-anim"
+                        href="mailto:vipulpandey7860@gmail.com">hello@VipulPandey.dev</a></p>
+            </div>
+        </div>
 
 
     </div>
 
-
-
+    <!-- scripts -->
 
     <!-- locomotive -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
@@ -369,6 +324,7 @@
         integrity="sha512-v8B8T8l8JiiJRGomPd2k+bPS98RWBLGChFMJbK1hmHiDHYq0EjdQl20LyWeIs+MGRLTWBycJGEGAjKkEtd7w5Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <!-- for main page typed effect -->
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
 
@@ -386,6 +342,12 @@
 
         });
     </script>
+
+    <!-- For Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+
 
     <script src="script.js"></script>
 

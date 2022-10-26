@@ -1,4 +1,19 @@
-function show() {
+function heroBackground() {
+  VANTA.NET({
+    el: "#page1",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    color: '#ffa500',
+    backgroundColor: "#15171b",
+  });
+}
+
+function loco() {
   gsap.registerPlugin(ScrollTrigger);
 
 
@@ -30,11 +45,12 @@ function show() {
   ScrollTrigger.refresh();
 
 }
-show();
+loco();
 
 function CursonAnimation() {
 
-  document.addEventListener("mousemove", function (e) {
+  let section = document.querySelector(".section");
+  section.addEventListener("mousemove", function (e) {
 
     var elem = document.createElement('div');
     elem.setAttribute("class", "trail")
@@ -61,7 +77,7 @@ function ProjectsAnimation() {
       scroller: "#main",
       start: "top 23%",
       toggleActions: "play pause pause reverse",
-      //  markers: true,
+      //  markers: true, 
 
     },
 
@@ -73,8 +89,11 @@ function ProjectsAnimation() {
     height: '700vh',
     ease: ' Power2.easeOut',
     backgroundImage: "none",
-    backgroundColor: "#fff",
+    backgroundColor: "#15171b",
     boxShadow: 'none',
+    pointerEvents: "all",
+
+
   })
 
   gsap.to('#master-1', {
@@ -120,7 +139,7 @@ function PageColorChange() {
     container[i].addEventListener("mouseleave", function (dets) {
 
       main.style.backgroundColor = "#15171b";
-      section.style.backgroundColor = "#fff";
+      section.style.backgroundColor = "#15171b";
 
       circleTxt[i].style.display = 'none';
 
@@ -251,22 +270,89 @@ function heroImgAnimation() {
 
 }
 
+function circleAnimation() {
+
+
+  gsap.from(".circle", {
+
+    scrollTrigger: {
+      trigger: ".circle",
+      scroller: "#main",
+      start: "top 75%",
+      end: "top 50%",
+      scrub: "true",
+      // markers: true,
+    },
+    opacity: 0,
+    y: '40',
+
+  })
+
+
+}
+
+function OpenCloseButton() {
+
+  let menu = document.querySelector(".menu");
+  let full = document.querySelector(".menubar");
+  let line1 = document.querySelector("#line1");
+  let line2 = document.querySelector("#line2");
+
+
+  var clickCounter = 1;
+
+  menu.addEventListener("click", function () {
+    if (clickCounter === 1) {
+
+      full.style.transform = `translateY(0%)`;
+
+      line1.style.transform = `rotate(45deg) translate(-8px, 13px)`;
+      line2.style.transform = `rotate(-45deg) translate(-8px, -13px)`;
+      line2.style.width = `2.5vw`;
+
+
+      gsap.from(".links>a", {
+        opacity: 0,
+        y: '-500',
+        autoAlpha: 1,
+        stagger: 0.1,
+
+      })
+
+      clickCounter = 0;
+    } else {
+      full.style.transform = `translateY(-100%)`;
+
+      line1.style.transform = `initial`;
+      line2.style.transform = `initial`;
+
+      line2.style.width = `1.6vw`;
+      clickCounter = 1;
+    }
+
+  })
+
+}
+
 
 if (window.innerWidth <= 500) {
   CursonAnimation();
   ProjectsMobileAnimation();
   PageColorChange();
   TextMobileAnimation();
+  heroBackground();
 }
 
 else {
+  heroBackground();
   CursonAnimation();
   ProjectsAnimation();
   PageColorChange();
   TextAnimation();
   heroImgAnimation();
-
-
+  circleAnimation();
+  OpenCloseButton();
+  menubarBackground();
 }
 
 
