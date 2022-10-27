@@ -4,7 +4,7 @@ function heroBackground() {
     mouseControls: true,
     touchControls: true,
     gyroControls: true,
-    minHeight: 200.00,
+    minHeight: 300.00,
     minWidth: 200.00,
     scale: 1.00,
     scaleMobile: 1.00,
@@ -21,7 +21,7 @@ function loco() {
     el: document.querySelector("#main"),
     smooth: true,
     getDirection: true,
-    
+
   });
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
@@ -215,9 +215,9 @@ function ProjectsMobileAnimation() {
     scrollTrigger: {
       trigger: '.section',
       scroller: "#main",
-      start: "top 65%",
+      start: "top 50%",
       toggleActions: "play pause pause reverse",
-      //  markers: true,
+      //  markers: true, 
 
     },
     scale: '1',
@@ -225,26 +225,30 @@ function ProjectsMobileAnimation() {
     borderTopRightRadius: '0',
     borderTopLeftRadius: '0',
     width: '100vw',
-    height: '60vh',
+    height: '700vh',
     ease: ' Power2.easeOut',
     backgroundImage: "none",
-    backgroundColor: "initial",
+    backgroundColor: "#15171b",
     boxShadow: 'none',
+    pointerEvents: "all",
 
   })
 
-  gsap.to('#img-box1', {
+
+  gsap.to('#master-1', {
 
     scrollTrigger: {
-      trigger: '#img-box1',
+      trigger: '#master-1',
       scroller: "#main",
-      start: "top 70%",
+      start: "top 50.5%",
       toggleActions: "play pause pause reverse",
 
       //  markers: true,
 
     },
+
     opacity: '1',
+    pointerEvents: "all",
   })
 
 }
@@ -293,7 +297,7 @@ function circleAnimation() {
     scrollTrigger: {
       trigger: ".circle",
       scroller: "#main",
-      start: "top 75%",
+      start: "top 80%",
       end: "top 50%",
       scrub: "true",
       // markers: true,
@@ -322,8 +326,8 @@ function OpenCloseButton() {
       full.style.transform = `translateY(0%)`;
 
       line1.style.transform = `rotate(45deg) translate(-8px, 13px)`;
-      line2.style.transform = `rotate(-45deg) translate(-8px, -13px)`;
-      line2.style.width = `2.5vw`;
+      line2.style.transform = `rotate(-42deg) translate(-8px, -13px)`;
+      line2.style.width = `3.6vw`;
 
 
       gsap.from(".links>a", {
@@ -341,7 +345,7 @@ function OpenCloseButton() {
       line1.style.transform = `initial`;
       line2.style.transform = `initial`;
 
-      line2.style.width = `1.6vw`;
+      line2.style.width = `2.6vw`;
       clickCounter = 1;
     }
 
@@ -351,15 +355,19 @@ function OpenCloseButton() {
 
 
 if (window.innerWidth <= 500) {
+  loco(); 
+  heroBackground();
   CursonAnimation();
   ProjectsMobileAnimation();
   PageColorChange();
   TextMobileAnimation();
-  heroBackground();
+  circleAnimation();
+  OpenCloseButton();
+
 }
 
 else {
-loco();
+  loco();
   heroBackground();
   CursonAnimation();
   ProjectsAnimation();
@@ -368,7 +376,6 @@ loco();
   heroImgAnimation();
   circleAnimation();
   OpenCloseButton();
-  menubarBackground();
 }
 
 

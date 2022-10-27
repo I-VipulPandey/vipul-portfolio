@@ -106,7 +106,7 @@ body {
 #line1 {
     position: relative;
     height: 0.3vh;
-    width: 2.5vw;
+    width: 3.6vw;
     background-color: #FFA500;
     margin: 6px 10px;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
@@ -115,7 +115,7 @@ body {
 #line2 {
     position: relative;
     height: 0.3vh;
-    width: 1.6vw;
+    width: 2.6vw;
     background-color: #FFA500;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
     margin: 0 10px;
@@ -157,6 +157,8 @@ body {
     position: relative;
     width: 100vw;
     height: 100vh;
+    background-position: center;
+    background-size: cover;
 }
 
 .hero-img {
@@ -164,6 +166,8 @@ body {
     right: 1%;
     top: 20%;
     z-index: 5;
+    background-color: transparent;
+
 }
 
 .hero-img img {
@@ -173,7 +177,7 @@ body {
 
 .content {
     position: relative;
-    left: 20vh;
+    left: 10vh;
     top: 15vw;
     z-index: 9;
 
@@ -181,14 +185,14 @@ body {
 
 .content h3 {
     color: #FCF3EA;
-    font-size: 3vw;
+    font-size: 5vw;
     font-family: "cyrene";
     letter-spacing: 3px;
 
 }
 
 .content h2 {
-    font-size: 5vw;
+    font-size: 7vw;
     color: #FFA500;
     text-transform: uppercase;
     display: inline-block;
@@ -198,11 +202,12 @@ body {
 
 .content h2 .type {
     color: #FCF3EA;
-    font-size: 5vw;
+    font-size: 7vw;
     font-family: "cyrene";
     letter-spacing: 2px;
     text-transform: uppercase;
-    mix-blend-mode: difference;
+    background-color: transparent;
+
 }
 
 .socials {
@@ -515,8 +520,14 @@ body {
     color: #FCF3EA;
     font-size: 2.5vw;
     margin-top: 5vh;
-    margin-left: 5vh;
+    margin-left: 10vh;
     margin-bottom: 10vh;
+
+}
+
+.about p::first-letter {
+    font-size: 4vw;
+    color: #FFA500;
 }
 
 #personal-section {
@@ -811,6 +822,10 @@ body {
 
     }
 
+    .nav {
+        width: 95vw;
+    }
+
     .nav .logo a {
         font-size: 6vw;
     }
@@ -819,106 +834,89 @@ body {
         font-size: 3.5vw;
     }
 
+    #line1 {
+        width: 3.6vw;
+    }
+
+    #line2 {
+        width: 2.6vw;
+    }
+
+    .menubar {
+        z-index: 99999;
+        overflow-y: hidden;
+    }
+
+    .menubar .links a {
+        font-size: 7vw;
+    }
+
+    #page1 {
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+
+    .vanta-canvas {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .hero-img img {
+        display: none;
+    }
+
     .content {
-        left: 8vh;
+        left: 0;
         top: 50vw;
     }
 
     .content h3 {
-        font-size: 9vw;
-    }
-
-    .content h2 {
         font-size: 12vw;
-        margin-top: 1vh;
+        text-align: center;
     }
 
     .content h2 {
-        font-size: 10vw;
+        font-size: 14vw;
+        margin-top: 1vh;
+        text-align: center;
         display: block;
+
     }
 
     .content h2 .type {
-        font-size: 12vw;
+        font-size: 14vw;
     }
 
     .socials {
         position: absolute;
-        top: 80vh;
+        top: 90vh;
         left: 10vw;
         width: 50vw;
     }
 
     .socials a {
-        font-size: 5vw;
+        font-size: 7vw;
         margin-right: 4vw;
     }
 
-    #about-section {
-        flex-direction: column-reverse;
-        height: 112vh;
+    .about-para {
+        font-size: 4.6vw;
+        margin: 10vh 5vw;
     }
 
-
-    #about-section .img {
-        left: 3vh;
-
-    }
-
-    #about-section .img #blob {
-        right: initial;
-        top: initial;
-        width: 150vw;
-    }
-
-    #about-section .img #boy {
-        right: initial;
-        top: initial;
-        height: 35vh;
-    }
-
-    .about {
-        left: 3vw;
-        display: initial;
-        margin-top: initial;
-        width: 90vw;
-    }
-
-    .about h2 {
-        font-size: 12vw;
-        margin-bottom: 5vh;
-        position: relative;
-        left: 22vw;
-    }
-
-    .about p {
-        font-size: 4.3vw;
-        width: 75vw;
-        line-height: 3.5vh;
-        /* display: contents; */
-    }
-
-    .about button {
-        height: 6vh;
-        width: 40vw;
-        font-size: 5.5vw;
-        margin-top: 5vh;
-    }
-
-    .skills h2 {
-        font-size: 12vw;
-    }
-
-    .skills-sec {
-        grid-template-columns: none;
-    }
 
     #work-section {
         min-height: 60vh;
+        height: 450vh;
     }
 
     #work-section h2 {
         font-size: 12vw;
+    }
+
+    #work-section p {
+        font-size: 3.7vw;
     }
 
     .section {
@@ -927,20 +925,24 @@ body {
         transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
     }
 
-    #img-box1 {
+    #master-1 {
         opacity: 0;
     }
 
     .img-txt-container .img-box {
-        height: 21vh;
+        height: 23vh;
         width: 80vw;
         background-position: center;
         background-size: cover;
     }
 
     .img-txt-container {
-        right: -15%;
+        right: -7%;
 
+    }
+
+    .img-txt-container:nth-child(even) {
+        right: -15%;
     }
 
     .txt-container #upper {
@@ -956,8 +958,75 @@ body {
         font-size: 2.5vw;
     }
 
-    footer {
-        height: 110vh;
+
+    /* common footer */
+
+    .circle {
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .hero-footer {
+        height: 37vh;
+    }
+
+    .heads h2 {
+        font-size: 8vw;
+    }
+
+    .heads p {
+        font-size: 4vw;
+    }
+
+
+
+    /* About responsive */
+
+    .about h2 {
+        font-size: 12vw;
+    }
+
+    .about p {
+        font-size: 5.5vw;
+        margin-left: 8vw;
+        margin-right: 5vw;
+    }
+
+    .about p::first-letter {
+        font-size: 7vw;
+    }
+
+    #personal-section {
+        margin-bottom: 10vh;
+    }
+
+    .personal h2 {
+        font-size: 12vw;
+        margin-bottom: 5vh;
+    }
+
+    .personal p {
+        font-size: 5vw;
+        margin-top: initial;
+        margin-bottom: initial;
+        margin-left: 8vw;
+        margin-right: 5vw;
+    }
+
+    .elems {
+        font-size: 9vw;
+    }
+
+    
+
+    /* contact page responsive */
+
+    .contact-me>h2{
+        font-size: 12vw;
+    }
+
+    .contact-me>p{
+        font-size: 4.5vw;
     }
 
     .contact-form {
@@ -979,7 +1048,13 @@ body {
 
     .contact-form .contact-part1 form input {
         width: 65vw;
-        font-size: 3vw;
+        font-size: 4vw;
+    }
+
+    .contact-form .contact-part1 textarea{
+        font-size: 4vw;
+        width: 65vw;
+
     }
 
     .contact-form .contact-part1 form button {

@@ -42,7 +42,7 @@ function loco() {
     ScrollTrigger.refresh();
 
 }
-loco();
+
 function skillsAnimation() {
     var RightJayega = document.querySelectorAll(".right-jayega");
     var LeftJayega = document.querySelectorAll(".left-jayega");
@@ -87,22 +87,22 @@ function circleAnimation() {
 
 
     gsap.from(".circle", {
-
-        scrollTrigger: {
-            trigger: ".circle",
-            scroller: "#main",
-            start: "top 70%",
-            end: "top 50%",
-            scrub: true,
-            // markers: true,
-        },
-        opacity: 0,
-        y: '40',
-
+  
+      scrollTrigger: {
+        trigger: ".circle",
+        scroller: "#main",
+        start: "top 80%",
+        end: "top 50%",
+        scrub: "true",
+        // markers: true,
+      },
+      opacity: 0,
+      y: '40',
+  
     })
-
-
-}
+  
+  
+  }
 
 function footerBackground() {
     VANTA.BIRDS({
@@ -125,44 +125,71 @@ function OpenCloseButton() {
     let full = document.querySelector(".menubar");
     let line1 = document.querySelector("#line1");
     let line2 = document.querySelector("#line2");
-
-
+  
+  
     var clickCounter = 1;
-
+  
     menu.addEventListener("click", function () {
-        if (clickCounter === 1) {
-
-            full.style.transform = `translateY(0%)`;
-
-            line1.style.transform = `rotate(45deg) translate(-8px, 13px)`;
-            line2.style.transform = `rotate(-45deg) translate(-8px, -13px)`;
-            line2.style.width = `2.5vw`;
-
-
-            gsap.from(".links>a", {
-                opacity: 0,
-                y: '-500',
-                autoAlpha: 1,
-                stagger: 0.1,
-
-            })
-
-            clickCounter = 0;
-        } else {
-            full.style.transform = `translateY(-100%)`;
-
-            line1.style.transform = `initial`;
-            line2.style.transform = `initial`;
-
-            line2.style.width = `1.6vw`;
-            clickCounter = 1;
-        }
-
+      if (clickCounter === 1) {
+  
+        full.style.transform = `translateY(0%)`;
+  
+        line1.style.transform = `rotate(45deg) translate(-8px, 13px)`;
+        line2.style.transform = `rotate(-42deg) translate(-8px, -13px)`;
+        line2.style.width = `3.6vw`;
+  
+  
+        gsap.from(".links>a", {
+          opacity: 0,
+          y: '-500',
+          autoAlpha: 1,
+          stagger: 0.1,
+  
+        })
+  
+        clickCounter = 0;
+      } else {
+        full.style.transform = `translateY(-100%)`;
+  
+        line1.style.transform = `initial`;
+        line2.style.transform = `initial`;
+  
+        line2.style.width = `2.6vw`;
+        clickCounter = 1;
+      }
+  
     })
+  
+  }
 
-}
+function TextAnimation() {
+    let AnimateIt = document.querySelectorAll(".txts");
+  
+    for (let i = 0; i < AnimateIt.length; i++) {
+  
+      gsap.from(AnimateIt[i], {
+  
+        scrollTrigger: {
+          trigger: AnimateIt[i],
+          scroller: "#main",
+          start: "top 70%",
+          end: "top 50%",
+          scrub: .3,
+          // markers:true,
+        },
+        opacity: 0,
+        y: '40',
+        autoAlpha: 1,
+        stagger: .5,
+  
+      })
+  
+    }
+  }
+  
 
-
+loco();
+TextAnimation();
 OpenCloseButton();
 footerBackground();
 circleAnimation();
