@@ -26,18 +26,9 @@ function loco() {
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
 
-  locoScroll.on('scroll', function (dets) {
-
-    if (dets.direction === "up") {
-      document.querySelector('.nav').style.top = "0";
-    }
-
-    else {
-      document.querySelector('.nav').style.top = "-100%";
-
-    }
-
-  })
+  locoScroll.on('scroll', (instance) => {
+    document.documentElement.setAttribute('data-direction', instance.direction)
+});
 
   // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy("#main", {
@@ -215,7 +206,7 @@ function ProjectsMobileAnimation() {
     scrollTrigger: {
       trigger: '.section',
       scroller: "#main",
-      start: "top 50%",
+      start: "top 38%",
       toggleActions: "play pause pause reverse",
       //  markers: true, 
 
@@ -240,9 +231,8 @@ function ProjectsMobileAnimation() {
     scrollTrigger: {
       trigger: '#master-1',
       scroller: "#main",
-      start: "top 50.5%",
+      start: "top 46%",
       toggleActions: "play pause pause reverse",
-
       //  markers: true,
 
     },
@@ -297,8 +287,29 @@ function circleAnimation() {
     scrollTrigger: {
       trigger: ".circle",
       scroller: "#main",
-      start: "top 80%",
+      start: "top 75%",
       end: "top 50%",
+      scrub: "true",
+      // markers: true,
+    },
+    opacity: 0,
+    y: '40',
+
+  })
+
+
+}
+
+function circleMobileAnimation() {
+
+
+  gsap.from(".circle", {
+
+    scrollTrigger: {
+      trigger: ".circle",
+      scroller: "#main",
+      start: "top 95%",
+      end: "top 80%",
       scrub: "true",
       // markers: true,
     },
@@ -361,7 +372,7 @@ if (window.innerWidth <= 500) {
   ProjectsMobileAnimation();
   PageColorChange();
   TextMobileAnimation();
-  circleAnimation();
+  circleMobileAnimation();
   OpenCloseButton();
 
 }
