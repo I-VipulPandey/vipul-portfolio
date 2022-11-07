@@ -161,9 +161,10 @@ html[data-direction="down"] .nav {
 #page1 {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     background-position: center;
     background-size: cover;
+    top: -10vh;
 }
 
 .hero-img {
@@ -172,6 +173,7 @@ html[data-direction="down"] .nav {
     top: 20%;
     z-index: 5;
     background-color: transparent;
+    height: 80vh;
 
 }
 
@@ -183,7 +185,7 @@ html[data-direction="down"] .nav {
 .content {
     position: relative;
     left: 10vh;
-    top: 15vw;
+    top: 22vw;
     z-index: 9;
 
 }
@@ -239,11 +241,12 @@ html[data-direction="down"] .nav {
 
 .about-para {
     color: #FCF3EA;
-    font-family: "daa";
+    font-family: "cyrene";
     margin: 20vh 5vw;
     margin-left: 5vw;
     font-size: 2vw;
     text-align: center;
+    line-height: 5vh;
 }
 
 
@@ -274,8 +277,9 @@ html[data-direction="down"] .nav {
     top: 10vh;
     text-align: center;
     font-size: 1.5vw;
-    font-family: "daa";
+    font-family: "cyrene";
     mix-blend-mode: difference;
+    line-height: 4vh;
 
 }
 
@@ -331,6 +335,7 @@ html[data-direction="down"] .nav {
     opacity: 0;
     pointer-events: none;
 }
+
 
 
 #img-box1 {
@@ -858,7 +863,7 @@ html[data-direction="down"] .nav {
     #page1 {
         background-position: center;
         background-size: cover;
-        height: 100vh;
+        height: 110vh;
     }
 
     .vanta-canvas {
@@ -872,7 +877,7 @@ html[data-direction="down"] .nav {
 
     .content {
         left: 0;
-        top: 50vw;
+        top: 75vw;
     }
 
     .content h3 {
@@ -894,7 +899,7 @@ html[data-direction="down"] .nav {
 
     .socials {
         position: absolute;
-        top: 90vh;
+        top: 100vh;
         left: 10vw;
         width: 50vw;
     }

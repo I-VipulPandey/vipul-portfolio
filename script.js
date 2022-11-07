@@ -4,10 +4,29 @@ function heroBackground() {
     mouseControls: true,
     touchControls: true,
     gyroControls: true,
-    minHeight: 300.00,
-    minWidth: 200.00,
-    scale: 1.00,
+    Height: 200.00,
+    Width: 200.00,
+    scale: .50,
     scaleMobile: 1.00,
+    maxDistance: 19.00,
+    spacing: 15.00,
+    color: '#ffa500',
+    backgroundColor: "#15171b",
+  });
+}
+
+function heroBackgroundMobile() {
+  VANTA.NET({
+    el: "#page1",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: true,
+    Height: 200.00,
+    Width: 200.00,
+    scale: .70,
+    scaleMobile: 1.00,
+    maxDistance: 20.00,
+    spacing: 25.00,
     color: '#ffa500',
     backgroundColor: "#15171b",
   });
@@ -28,7 +47,7 @@ function loco() {
 
   locoScroll.on('scroll', (instance) => {
     document.documentElement.setAttribute('data-direction', instance.direction)
-});
+  });
 
   // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy("#main", {
@@ -115,9 +134,22 @@ function ProjectsAnimation() {
     },
 
     opacity: '1',
-    pointerEvents: "all",
   })
 
+  gsap.to('.img-box', {
+
+    scrollTrigger: {
+      trigger: '#master-1',
+      scroller: "#main",
+      start: "top 40.5%",
+      toggleActions: "play pause pause reverse",
+
+      //  markers: true,
+
+    },
+
+    pointerEvents: "all",
+  })
 }
 
 
@@ -268,16 +300,6 @@ function TextMobileAnimation() {
   }
 }
 
-function heroImgAnimation() {
-  let photu = document.querySelector('#photu');
-
-  window.addEventListener('mousemove', function (dets) {
-
-    photu.style.transform = ` translateY(${1 - dets.clientY * 0.09}px) translateX(${1 - dets.clientX * 0.09}px) `
-
-  })
-
-}
 
 function circleAnimation() {
 
@@ -366,8 +388,8 @@ function OpenCloseButton() {
 
 
 if (window.innerWidth <= 500) {
-  loco(); 
-  heroBackground();
+  loco();
+  heroBackgroundMobile();
   CursonAnimation();
   ProjectsMobileAnimation();
   PageColorChange();
@@ -384,7 +406,6 @@ else {
   ProjectsAnimation();
   PageColorChange();
   TextAnimation();
-  heroImgAnimation();
   circleAnimation();
   OpenCloseButton();
 }
