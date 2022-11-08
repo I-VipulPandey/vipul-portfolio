@@ -196,7 +196,7 @@ function elemSpanStructure() {
     parent.classList.add('parent')
     child.classList.add('child')
 
-    child.textContent = elem.textContent;
+    child.innerHTML = elem.innerHTML;
     parent.appendChild(child);
 
     elem.innerHTML = "";

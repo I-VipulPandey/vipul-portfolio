@@ -1,3 +1,53 @@
+
+function loco() {
+  gsap.registerPlugin(ScrollTrigger);
+
+
+  const locoScroll = new LocomotiveScroll({
+    el: document.querySelector("#main"),
+    smooth: true,
+    getDirection: true,
+
+  });
+  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+  locoScroll.on("scroll", ScrollTrigger.update);
+
+  locoScroll.on('scroll', function (dets) {
+
+    if (dets.direction === "up") {
+      document.querySelector('.nav').style.top = "0";
+    }
+
+    else {
+      document.querySelector('.nav').style.top = "-100%";
+
+    }
+
+  })
+
+  // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
+  ScrollTrigger.scrollerProxy("#main", {
+    scrollTop(value) {
+      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+    getBoundingClientRect() {
+      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
+    },
+    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
+  });
+
+
+
+  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+  ScrollTrigger.refresh();
+
+
+}
+
 function heroBackground() {
   VANTA.NET({
     el: "#page1",
@@ -24,7 +74,7 @@ function elemSpanStructure() {
     parent.classList.add('parent')
     child.classList.add('child')
 
-    child.textContent = elem.textContent;
+    child.innerHTML = elem.innerHTML;
     parent.appendChild(child);
 
     elem.innerHTML = "";
@@ -52,45 +102,7 @@ function heroBackgroundMobile() {
   });
 }
 
-function loco() {
-  gsap.registerPlugin(ScrollTrigger);
 
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    smooth: true,
-    getDirection: true,
-
-  });
-  // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  locoScroll.on('scroll', (instance) => {
-    document.documentElement.setAttribute('data-direction', instance.direction)
-  });
-
-  // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
-  ScrollTrigger.scrollerProxy("#main", {
-    scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    }, // we don't have to define a scrollLeft because we're only scrolling vertically.
-    getBoundingClientRect() {
-      return { top: 0, left: 0, width: window.innerWidth, height: window.innerHeight };
-    },
-    // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
-    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
-  });
-
-
-
-  // each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-
-  // after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
-  ScrollTrigger.refresh();
-
-
-}
 
 function CursonAnimation() {
 
@@ -436,6 +448,35 @@ function SmallCircleMoving() {
 }
 
 
+function loaderAnimation(){
+  var tl = gsap.timeline();
+
+  tl
+  .to(".parent .child", {
+    y: '0%',
+    duration: 1,
+    delay: .5,
+    
+  })
+  .to(".loader1",{
+    height:0,
+    duration:1,
+    top:'-50vh',
+    delay:.4,
+    ease:Circ.easeInOut,
+  })
+
+  .to(".loader2",{
+    height:0,
+    duration:1,
+    top:'-100vh',
+    delay:-1,
+    ease:Circ.easeInOut,
+
+  })
+
+}
+
 
 if (window.innerWidth <= 500) {
   loco();
@@ -452,6 +493,7 @@ if (window.innerWidth <= 500) {
 
 else {
   loco();
+  loaderAnimation();
   heroBackground();
   CursonAnimation();
   ProjectsAnimation();
@@ -460,6 +502,7 @@ else {
   circleAnimation();
   OpenCloseButton();
   SmallCircleMoving();
+
 }
 
 

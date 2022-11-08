@@ -69,6 +69,40 @@ body {
     }
 }
 
+.loader1{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: #15171b;
+    z-index: 9999999;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+
+}
+
+.loader2{
+    top: 100vh;
+    position: absolute;
+    z-index: 9999999;
+    height: 100vh;
+    width: 100vw;
+    background-color: #FFA500;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+
+}
+
+.loader1 h1{
+    text-transform: uppercase;
+    color: #FFA500;
+    stroke: 5px solid #FFA500;
+    font-size: 8vw;
+    text-align: center;
+    font-family: cyrene;
+}
+
 .nav {
 
     width: 100vw;
@@ -77,14 +111,11 @@ body {
     align-items: center;
     justify-content: space-between;
     z-index: 99999;
-    position: fixed;
+    position: fixed;    
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
     transform: translate3d(0, 0, 0);
     backdrop-filter: blur(2px);
-}
 
-html[data-direction="down"] .nav {
-    transform: translate3d(0, -100%, 0);
 }
 
 .nav .logo a {
@@ -195,6 +226,7 @@ html[data-direction="down"] .nav {
     background-position: center;
     background-size: cover;
     top: -10vh;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
 }
 
 .hero-img {
