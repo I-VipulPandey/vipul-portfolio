@@ -80,6 +80,7 @@ body {
     position: fixed;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
     transform: translate3d(0, 0, 0);
+    backdrop-filter: blur(2px);
 }
 
 html[data-direction="down"] .nav {
@@ -139,18 +140,46 @@ html[data-direction="down"] .nav {
     background-color: #15171b;
 }
 
-.menubar .links {
+.links{
     display: flex;
     flex-direction: column;
-    gap: 3vh;
-    text-align: center;
+    align-items: center;
+    gap: 2vw;
+    overflow: hidden;
 }
 
-.menubar .links a {
+.links a{
     text-decoration: none;
-    font-size: 3vw;
-    color: #FFA500;
 }
+
+.links .reveal .parent .child{
+    font-size: 5vw;
+    text-decoration: none;
+    color: #FFA500;
+    stroke: 1px solid #ffa500;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+}
+
+.links .reveal .parent .child:hover{
+    border-bottom: 1px solid #FFA500;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+
+}
+
+.reveal .parent{
+    display: block;
+    overflow: hidden;
+}
+
+.reveal .parent .child{
+    display: block;
+    transform: translateY(100%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+
 
 #main {
     position: absolute;

@@ -131,13 +131,11 @@ function OpenCloseButton() {
       line2.style.transform = `rotate(-42deg) translate(-8px, -13px)`;
       line2.style.width = `3.6vw`;
 
-
-      gsap.from(".links>a", {
-        opacity: 0,
-        y: '-500',
-        autoAlpha: 1,
-        stagger: 0.1,
-
+      gsap.to(".parent .child", {
+        y: '0%',
+        duration: 1,
+        delay: .5,
+        
       })
 
       clickCounter = 0;
@@ -148,6 +146,13 @@ function OpenCloseButton() {
       line2.style.transform = `initial`;
 
       line2.style.width = `2.6vw`;
+
+      gsap.to(".parent .child", {
+        y: '100%',
+        duration: 1,
+        
+      })
+
       clickCounter = 1;
     }
 
@@ -180,8 +185,26 @@ function TextAnimation() {
   }
 }
 
+function elemSpanStructure() {
+  document.querySelectorAll('.reveal').forEach(function (elem) {
+    let parent = document.createElement('span')
+    let child = document.createElement('span')
+
+
+    parent.classList.add('parent')
+    child.classList.add('child')
+
+    child.textContent = elem.textContent;
+    parent.appendChild(child);
+
+    elem.innerHTML = "";
+    elem.appendChild(parent);
+
+  })
+}
 
 loco();
+elemSpanStructure();
 TextAnimation();
 OpenCloseButton();
 footerBackground();
