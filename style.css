@@ -850,10 +850,10 @@ body {
     position: absolute;
     height: 1vw;
     width: 1vw;
-    background-color: #fff;
+    background-color: #111;
     border-radius: 50%;
+    filter: drop-shadow(1.5px 2px 5px #ecaf3e);
     mix-blend-mode: difference;
-    filter: drop-shadow(1.5px 2px 5px #fff);
 }
 
 .heads {
