@@ -138,9 +138,10 @@ html[data-direction="down"] .nav {
     z-index: 9;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
     background-color: #15171b;
+    overflow: hidden;
 }
 
-.links{
+.links {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -148,11 +149,11 @@ html[data-direction="down"] .nav {
     overflow: hidden;
 }
 
-.links a{
+.links a {
     text-decoration: none;
 }
 
-.links .reveal .parent .child{
+.links .reveal .parent .child {
     font-size: 5vw;
     text-decoration: none;
     color: #FFA500;
@@ -162,18 +163,18 @@ html[data-direction="down"] .nav {
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
 }
 
-.links .reveal .parent .child:hover{
+.links .reveal .parent .child:hover {
     border-bottom: 1px solid #FFA500;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
 
 }
 
-.reveal .parent{
+.reveal .parent {
     display: block;
     overflow: hidden;
 }
 
-.reveal .parent .child{
+.reveal .parent .child {
     display: block;
     transform: translateY(100%);
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
@@ -607,7 +608,7 @@ html[data-direction="down"] .nav {
     gap: 3vh;
     padding: 10vh 0;
     margin-top: 30vh;
-    
+
 }
 
 .wrapper {
@@ -813,6 +814,15 @@ html[data-direction="down"] .nav {
     justify-content: center;
 }
 
+#moving-circle {
+    position: absolute;
+    height: 1vw;
+    width: 1vw;
+    background-color: #fff;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    filter: drop-shadow(1.5px 2px 5px #fff);
+}
 
 .heads {
     position: absolute;
@@ -822,22 +832,29 @@ html[data-direction="down"] .nav {
     color: #FCF3EA;
     text-align: center;
     mix-blend-mode: difference;
+    pointer-events: none;
 
 }
 
 .heads h2 {
     font-size: 4.7vw;
     width: 100vw;
+    pointer-events: none;
+
 }
 
 .heads p {
     font-size: 1.8vw;
     font-weight: 200;
+    pointer-events: none;
+
 }
 
 .heads p a {
     text-decoration: none;
     color: #FCF3EA;
+    pointer-events: none;
+
 }
 
 .email-anim {
@@ -853,6 +870,7 @@ html[data-direction="down"] .nav {
 /* responsive css */
 
 @media only screen and (max-width:500px) {
+
 
 
     #main {
@@ -885,8 +903,8 @@ html[data-direction="down"] .nav {
         overflow-y: hidden;
     }
 
-    .menubar .links a {
-        font-size: 7vw;
+    .links .reveal .parent .child{
+        font-size: 12vw;
     }
 
     #page1 {
@@ -939,10 +957,10 @@ html[data-direction="down"] .nav {
     }
 
     .about-para {
-        font-size: 4.6vw;
-        margin: 10vh 5vw;
+        font-size: 5vw;
+        margin: 10vh 10vw;
+        
     }
-
 
     #work-section {
         min-height: 40vh;
@@ -954,7 +972,9 @@ html[data-direction="down"] .nav {
     }
 
     #work-section p {
-        font-size: 3.7vw;
+        font-size: 4vw;
+        margin: 0 6vw;
+
     }
 
     .section {
@@ -1005,6 +1025,10 @@ html[data-direction="down"] .nav {
         top: 30%;
     }
 
+    #moving-circle{
+        display: none;
+    }
+
     .hero-footer {
         height: 37vh;
     }
@@ -1052,7 +1076,7 @@ html[data-direction="down"] .nav {
         margin-right: 5vw;
     }
 
-    #skills-section{
+    #skills-section {
         margin-top: initial;
     }
 

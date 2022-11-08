@@ -377,6 +377,8 @@ function OpenCloseButton() {
     if (clickCounter === 1) {
 
       full.style.transform = `translateY(0%)`;
+      full.style.overflow = 'hidden';
+
 
       line1.style.transform = `rotate(45deg) translate(-8px, 13px)`;
       line2.style.transform = `rotate(-42deg) translate(-8px, -13px)`;
@@ -412,6 +414,27 @@ function OpenCloseButton() {
 
 }
 
+function SmallCircleMoving() {
+  document.querySelector(".circle")
+    .addEventListener("mousemove", function (dets) {
+      var bndrectvals = document.querySelector(".circle").getBoundingClientRect()
+      var xVal = dets.clientX - bndrectvals.x;
+      var yVal = dets.clientY - bndrectvals.y;
+
+      document.querySelector("#moving-circle").style.top = yVal + "px";
+      document.querySelector("#moving-circle").style.left = xVal + "px";
+      document.getElementById("#moving-circle").style.transition = "all cubic-bezier(0.19, 1, 0.22, 1) 0.4s";
+
+    })
+
+  document.querySelector(".circle")
+    .addEventListener("mouseleave", function (dets) {
+      document.querySelector("#moving-circle").style.top ='initial';
+      document.querySelector("#moving-circle").style.left ='initial';
+
+    })
+}
+
 
 
 if (window.innerWidth <= 500) {
@@ -423,6 +446,7 @@ if (window.innerWidth <= 500) {
   TextMobileAnimation();
   circleMobileAnimation();
   OpenCloseButton();
+  SmallCircleMoving();
 
 }
 
@@ -435,6 +459,7 @@ else {
   TextAnimation();
   circleAnimation();
   OpenCloseButton();
+  SmallCircleMoving();
 }
 
 
