@@ -480,6 +480,7 @@ function loaderAnimation(){
 
 if (window.innerWidth <= 500) {
   loco();
+  loaderAnimation();
   heroBackgroundMobile();
   CursonAnimation();
   ProjectsMobileAnimation();
