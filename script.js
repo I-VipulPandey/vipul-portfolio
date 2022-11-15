@@ -82,8 +82,6 @@ function elemSpanStructure() {
 
   })
 }
-elemSpanStructure();
-
 
 function heroBackgroundMobile() {
   VANTA.NET({
@@ -265,6 +263,7 @@ function TextAnimation() {
 }
 
 function ProjectsMobileAnimation() {
+
   gsap.to('.section', {
 
     scrollTrigger: {
@@ -285,7 +284,9 @@ function ProjectsMobileAnimation() {
     backgroundImage: "none",
     backgroundColor: "#15171b",
     boxShadow: 'none',
-    pointerEvents: "all",
+    onComplete() {
+      document.querySelector('.section').style.pointerEvents = 'all';
+    }
 
   })
 
@@ -295,7 +296,7 @@ function ProjectsMobileAnimation() {
     scrollTrigger: {
       trigger: '#master-1',
       scroller: "#main",
-      start: "top 46%",
+      start: "top 45.5%",
       toggleActions: "play pause pause reverse",
       //  markers: true,
 
@@ -400,7 +401,7 @@ function OpenCloseButton() {
         y: '0%',
         duration: 1,
         delay: .5,
-        
+
       })
 
       clickCounter = 0;
@@ -416,7 +417,7 @@ function OpenCloseButton() {
       gsap.to(".parent .child", {
         y: '100%',
         duration: 1,
-        
+
       })
       clickCounter = 1;
 
@@ -441,39 +442,39 @@ function SmallCircleMoving() {
 
   document.querySelector(".circle")
     .addEventListener("mouseleave", function (dets) {
-      document.querySelector("#moving-circle").style.top ='initial';
-      document.querySelector("#moving-circle").style.left ='initial';
+      document.querySelector("#moving-circle").style.top = 'initial';
+      document.querySelector("#moving-circle").style.left = 'initial';
 
     })
 }
 
 
-function loaderAnimation(){
+function loaderAnimation() {
   var tl = gsap.timeline();
 
   tl
-  .to(".parent .child", {
-    y: '0%',
-    duration: 1,
-    delay: .5,
-    
-  })
-  .to(".loader1",{
-    height:0,
-    duration:1,
-    top:'-50vh',
-    delay:.4,
-    ease:Circ.easeInOut,
-  })
+    .to(".parent .child", {
+      y: '0%',
+      duration: 1,
+      delay: .5,
 
-  .to(".loader2",{
-    height:0,
-    duration:1,
-    top:'-100vh',
-    delay:-1,
-    ease:Circ.easeInOut,
+    })
+    .to(".loader1", {
+      height: 0,
+      duration: 1,
+      top: '-50vh',
+      delay: .4,
+      ease: Circ.easeInOut,
+    })
 
-  })
+    .to(".loader2", {
+      height: 0,
+      duration: 1,
+      top: '-100vh',
+      delay: -1,
+      ease: Circ.easeInOut,
+
+    })
 
 }
 
@@ -493,15 +494,16 @@ if (window.innerWidth <= 500) {
 }
 
 else {
+  elemSpanStructure();
   loco();
   loaderAnimation();
   heroBackground();
+  OpenCloseButton();
   CursonAnimation();
   ProjectsAnimation();
   PageColorChange();
   TextAnimation();
   circleAnimation();
-  OpenCloseButton();
   SmallCircleMoving();
 
 }
