@@ -125,6 +125,8 @@ function CursonAnimation() {
 
 function ProjectsAnimation() {
 
+  var sec = document.querySelector('.section');
+
   gsap.to('.section', {
 
     scrollTrigger: {
@@ -146,7 +148,7 @@ function ProjectsAnimation() {
     backgroundImage: "none",
     backgroundColor: "#15171b",
     boxShadow: 'none',
-    pointerEvents: "all",
+    onComplete:sec.style.pointerEvents = 'all',
 
 
   })
