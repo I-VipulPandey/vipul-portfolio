@@ -12,19 +12,6 @@ function loco() {
   // each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
   locoScroll.on("scroll", ScrollTrigger.update);
 
-  locoScroll.on('scroll', function (dets) {
-
-    if (dets.direction === "up") {
-      document.querySelector('.nav').style.top = "0";
-    }
-
-    else {
-      document.querySelector('.nav').style.top = "-100%";
-
-    }
-
-  })
-
   // tell ScrollTrigger to use these proxy methods for the "#main" element since Locomotive Scroll is hijacking things
   ScrollTrigger.scrollerProxy("#main", {
     scrollTop(value) {
@@ -148,7 +135,7 @@ function ProjectsAnimation() {
     backgroundImage: "none",
     backgroundColor: "#15171b",
     boxShadow: 'none',
-    onComplete:sec.style.pointerEvents = 'all',
+    onComplete: sec.style.pointerEvents = 'all',
 
 
   })
@@ -164,7 +151,7 @@ function ProjectsAnimation() {
       //  markers: true,
 
     },
-
+    pointerEvents: 'all',
     opacity: '1',
   })
 
@@ -380,49 +367,40 @@ function circleMobileAnimation() {
 
 function OpenCloseButton() {
 
-  let menu = document.querySelector(".menu");
-  let full = document.querySelector(".menubar");
-  let line1 = document.querySelector("#line1");
-  let line2 = document.querySelector("#line2");
-
+  var menu = document.querySelector("#menu");
+  var full = document.querySelector(".menubar");
+  var line1 = document.querySelector("#line1");
+  var line2 = document.querySelector("#line2");
 
   var clickCounter = 1;
 
   menu.addEventListener("click", function () {
     if (clickCounter === 1) {
 
-      full.style.transform = `translateY(0%)`;
-      full.style.overflow = 'hidden';
+      full.style.width = '25vw';
+      line1.style.transform = `rotate(45deg) translate(-1px, 10px)`;
+      line2.style.transform = `rotate(-45deg) translate(-1px, -10px)`;
+      full.style.right = '-38%';
+      full.style.display = '',
 
+        line1.style.marginLeft = '15px';
+      line2.style.marginLeft = '15px';
 
-      line1.style.transform = `rotate(45deg) translate(-8px, 13px)`;
-      line2.style.transform = `rotate(-42deg) translate(-8px, -13px)`;
-      line2.style.width = `3.6vw`;
-
-      gsap.to(".parent .child", {
-        y: '0%',
-        duration: 1,
-        delay: .5,
-
-      })
 
       clickCounter = 0;
-
     } else {
-      full.style.transform = `translateY(-100%)`;
+      full.style.width = '0vw';
+      full.style.display = 'none',
+        full.style.right = '-70%';
 
-      line1.style.transform = `initial`;
-      line2.style.transform = `initial`;
 
-      line2.style.width = `2.6vw`;
+      line1.style.transform = ``;
+      line2.style.transform = ``;
 
-      gsap.to(".parent .child", {
-        y: '100%',
-        duration: 1,
+      line1.style.marginLeft = '';
+      line2.style.marginLeft = '';
 
-      })
       clickCounter = 1;
-
     }
 
   })
@@ -477,6 +455,11 @@ function loaderAnimation() {
       ease: Circ.easeInOut,
 
     })
+
+  tl.eventCallback('onComplete', function () {
+    document.querySelector('.nav').style.opacity = "1";
+
+  });
 
 }
 

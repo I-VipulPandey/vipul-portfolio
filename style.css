@@ -69,7 +69,7 @@ body {
     }
 }
 
-.loader1{
+.loader1 {
     position: absolute;
     height: 100vh;
     width: 100vw;
@@ -83,7 +83,7 @@ body {
 
 }
 
-.loader2{
+.loader2 {
     top: 100vh;
     position: absolute;
     z-index: 9999999;
@@ -94,110 +94,24 @@ body {
 
 }
 
-.loader1 h1{
+.loader1 h1 {
     text-transform: uppercase;
     color: #FFA500;
     stroke: 5px solid #FFA500;
-    font-size: 8vw;
     text-align: center;
     font-family: cyrene;
-}
-
-.nav {
-
-    width: 100vw;
-    padding: 3.5vh 5vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 99999;
-    position: fixed;    
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-    transform: translate3d(0, 0, 0);
-    backdrop-filter: blur(2px);
+    font-size: 10vw;
 
 }
 
-.nav .logo a {
-    text-decoration: none;
-    color: #ffa500;
-    font-family: "mazius";
-    font-size: 2vw;
-    z-index: 9999999;
+.reveal .parent .child {
 
-}
-
-.menu {
-    position: relative;
-    height: 3.5vh;
-    width: 3.5vw;
-    display: inline-block;
-    flex-direction: column;
-    margin-top: 15px;
-    cursor: url('assets/cursor-pointer.png'), auto;
-    justify-content: center;
-    align-items: center;
-
-}
-
-#line1 {
-    position: relative;
-    height: 0.3vh;
-    width: 3.6vw;
-    background-color: #FFA500;
-    margin: 6px 10px;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-}
-
-#line2 {
-    position: relative;
-    height: 0.3vh;
-    width: 2.6vw;
-    background-color: #FFA500;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-    margin: 0 10px;
-}
-
-.menubar {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(-100%);
-    z-index: 9;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
-    background-color: #15171b;
-    overflow: hidden;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vw;
-    overflow: hidden;
-}
-
-.links a {
-    text-decoration: none;
-}
-
-.links .reveal .parent .child {
-    font-size: 5vw;
     text-decoration: none;
     color: #FFA500;
     stroke: 1px solid #ffa500;
     text-transform: uppercase;
     overflow: hidden;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
-}
-
-.links .reveal .parent .child:hover {
-    border-bottom: 1px solid #FFA500;
-    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
-
 }
 
 .reveal .parent {
@@ -208,6 +122,92 @@ body {
 .reveal .parent .child {
     display: block;
     transform: translateY(100%);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+
+.nav {
+
+    width: 100vw;
+    height: 12vh;
+    padding: 0 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99999;
+    position: fixed;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    opacity: 0;
+}
+
+.logo-container {
+    font-size: 25px;
+    height: 40px;
+    width: 40px;
+    font-family: "mazius";
+    background-size: cover;
+    background-position: center;
+
+}
+
+.logo-container a {
+    text-decoration: none;
+    color: #FFA500;
+}
+
+.menubar {
+    height: 7.2vh;
+    width: 0vw;
+    background-color: #FFA500;
+    position: relative;
+    right: -70%;
+    display: none;
+    border-radius: 3vw;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+}
+
+.menubar :nth-child(1) {
+    margin-left: 3vw;
+}
+
+.menubar a {
+    text-decoration: none;
+    color: #15171b;
+    font-weight: 200;
+    font-family: "cyrene";
+
+}
+
+.menubar a:hover {
+    border-bottom: 1px solid #15171b;
+}
+
+#menu {
+    position: relative;
+    height: 3.5vw;
+    width: 3.5vw;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+}
+
+#menu:hover .lines {
+    transform: rotate(180deg);
+}
+
+.lines {
+    height: 0.3vh;
+    width: 2vw;
+    background-color: #111;
+    margin: 6px 0;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
 }
 
@@ -935,7 +935,7 @@ body {
         overflow-y: hidden;
     }
 
-    .links .reveal .parent .child{
+    .links .reveal .parent .child {
         font-size: 12vw;
     }
 
@@ -991,7 +991,7 @@ body {
     .about-para {
         font-size: 5vw;
         margin: 10vh 10vw;
-        
+
     }
 
     #work-section {
@@ -1057,7 +1057,7 @@ body {
         top: 30%;
     }
 
-    #moving-circle{
+    #moving-circle {
         display: none;
     }
 
