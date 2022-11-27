@@ -166,6 +166,7 @@ body {
     display: flex;
     align-items: center;
     gap: 2vw;
+    cursor: url("assets/cursor-pointer.png"), auto;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
 }
 
@@ -191,7 +192,7 @@ body {
     width: 3.5vw;
     display: flex;
     flex-direction: column;
-    cursor: pointer;
+    cursor: url("assets/cursor-pointer.png"), auto;
     background-color: #fff;
     align-items: center;
     justify-content: center;
