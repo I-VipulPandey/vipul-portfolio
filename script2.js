@@ -221,11 +221,73 @@ function SmallCircleMoving() {
 }
 
 
-loco();
-elemSpanStructure();
-TextAnimation();
-OpenCloseButton();
-footerBackground();
-circleAnimation();
-skillsAnimation();
-SmallCircleMoving();
+function OpenCloseButtonMobile() {
+
+  var menu = document.querySelector("#menu");
+  var full = document.querySelector(".menubar");
+  var line1 = document.querySelector("#line1");
+  var line2 = document.querySelector("#line2");
+
+  var clickCounter = 1;
+
+  menu.addEventListener("click", function () {
+    if (clickCounter === 1) {
+
+      full.style.width = '58vw';
+      line1.style.transform = `rotate(45deg) translate(-2.5px, 9px)`;
+      line2.style.transform = `rotate(-45deg) translate(-2px, -10px)`;
+      full.style.right = '-18%';
+      full.style.display = '',
+
+        line1.style.marginLeft = '15px';
+      line2.style.marginLeft = '15px';
+
+
+      clickCounter = 0;
+    } else {
+      full.style.width = '0vw';
+      full.style.display = 'none',
+      full.style.right = '-70%';
+
+
+      line1.style.transform = ``;
+      line2.style.transform = ``;
+
+      line1.style.marginLeft = '';
+      line2.style.marginLeft = '';
+
+      clickCounter = 1;
+    }
+
+  })
+
+}
+
+
+
+
+if (window.innerWidth <= 500) {
+  loco();
+  elemSpanStructure();
+  TextAnimation();
+  footerBackground();
+  OpenCloseButtonMobile();
+  circleAnimation();
+  skillsAnimation();
+  SmallCircleMoving();
+  
+}
+
+else {
+ 
+  loco();
+  elemSpanStructure();
+  TextAnimation();
+  OpenCloseButton();
+  footerBackground();
+  circleAnimation();
+  skillsAnimation();
+  SmallCircleMoving();
+}
+
+
