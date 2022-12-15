@@ -195,7 +195,7 @@ body {
     display: flex;
     flex-direction: column;
     cursor: url("assets/cursor-pointer.png"), auto;
-    background-color: #fff;
+    background-color: #FCF3EA;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
@@ -204,6 +204,7 @@ body {
 
 #menu:hover .lines {
     transform: rotate(180deg);
+
 }
 
 .lines {
@@ -212,6 +213,8 @@ body {
     background-color: #111;
     margin: 6px 0;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    cursor: url("assets/cursor-pointer.png"), auto;
+
 }
 
 
@@ -296,12 +299,16 @@ body {
     color: #FCF3EA;
     text-decoration: none;
     border: none;
+    
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+    
 
 }
 
 .socials a:hover {
+    cursor: url("assets/cursor-pointer.png"), auto;
     color: #FFA500;
+
 }
 
 .about-para {
@@ -373,8 +380,8 @@ body {
 
 .img-txt-container {
     position: relative;
-    width: fit-content;
     right: -5%;
+    width: fit-content;
 
 }
 
@@ -388,8 +395,8 @@ body {
     height: 30vw;
     width: 60vw;
     margin-top: 10vh;
-    background-position: center;
-    background-size: cover;
+    background-position: top !important;
+    background-size: cover !important;
     margin-bottom: 2vh;
     border: 1px solid #111;
     cursor: none;
@@ -528,6 +535,8 @@ body {
     text-decoration: none;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
     mix-blend-mode: difference;
+    cursor: url("assets/cursor-pointer.png"), auto;
+
 
 
 }
@@ -540,6 +549,7 @@ body {
     padding: 1vh 2vh;
     align-items: center;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+    
 
 
 }
@@ -558,6 +568,8 @@ body {
     text-transform: uppercase;
     font-size: 0.8vw;
     transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+    cursor: url("assets/cursor-pointer.png"), auto;
+
 
 
 }
@@ -741,6 +753,8 @@ body {
     font-size: 1.3vw;
     padding-bottom: 2vh;
     text-transform: uppercase;
+    cursor: url("assets/cursor-pointer.png"), auto;
+
 }
 
 .contact-form .contact-part1 textarea {
@@ -753,6 +767,8 @@ body {
     font-family: "gilroy";
     text-transform: uppercase;
     color: #FCF3EA;
+    cursor: url("assets/cursor-pointer.png"), auto;
+
 
 }
 
